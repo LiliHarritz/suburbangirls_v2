@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout.astro";
 import "../styles/general.css";
 import PostIt from "../components/PostIt.astro";
 import WhiteBox from "../components/WhiteBox.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout>
@@ -12,12 +13,12 @@ import WhiteBox from "../components/WhiteBox.astro";
   <img class="topIMG" src="../forlob_forside.webp" alt="To personer i et studio">
   <h1 class="margin">Vores forløb</h1>
   
-  <div class="grid-container" >
-    <div class="move-container move margin">
-      <p>SUBURBANGIRLS er et eksklusivt og forpligtende talent- og karriereforløb for for kvinder og kønsminoriteter mellem 15-25 år, der rapper, synger, skriver tekster og sange eller producerer beats, med interesse for hiphop, RnB og beslægtede genre. I forløbet får du værktøjer til at forbedre dine skills, lærer om musikbranchen, møde førende sangskrivere, producere, artister og rådgivere i musikbranchen og får netværk for livet!</p>
-</div>
-   
+  <div class="grid-container margin" >
     <div>
+      <p>SUBURBANGIRLS er et eksklusivt og forpligtende talent- og karriereforløb for for kvinder og kønsminoriteter mellem 15-25 år, der rapper, synger, skriver tekster og sange eller producerer beats, med interesse for hiphop, RnB og beslægtede genre. I forløbet får du værktøjer til at forbedre dine skills, lærer om musikbranchen, møde førende sangskrivere, producere, artister og rådgivere i musikbranchen og får netværk for livet!</p>
+    </div>
+   
+    <div class="span-container">
       <PostIt header="HVORFOR?">
         <ol>
           <li>Få viden og netværk inden for musikbranchen</li>
@@ -28,7 +29,7 @@ import WhiteBox from "../components/WhiteBox.astro";
       </PostIt>
     </div>
 
-     <div class="move-container move  margin">
+     <div>
       <p>Her har du mulighed for - i et trygt rum og et stærkt fælleskab med ligesindede kunstnere - at tage dine skills til det næste niveau. Det vigtigste kriterie for en plads på forløbet er dit talent, din motivation og dine ambitioner - ikke din erfaring. Men erfaring er heller ingen hindring!</p>
     </div>
   </div>
@@ -36,7 +37,7 @@ import WhiteBox from "../components/WhiteBox.astro";
 
   <img class="pink-img" src="../paper-texture_pink_01.gif" alt="pink papir der er revet over" >    
   <div class="pink-container">
-    <h2>FORLØBETS INDHOLD</h2>
+    <h1>FORLØBETS INDHOLD</h1>
     
     <div class="grid-container2">
       <WhiteBox text="STÆRKT NETVÆRK & FÆLLESSKAB"/>
@@ -108,7 +109,8 @@ import WhiteBox from "../components/WhiteBox.astro";
       <div>
           <h2 class="overskrift">TIDLIGERE DELTAGERS OPLEVELSER<br>MED SUBURBANGIRLS</h2>
       </div>
-    <div class="grid-container5"> 
+
+      <div class="grid-container5"> 
         <div class="polaroid-box polaroid-box1">
           <img class="tape tape13" src="../svger/tape.svg" alt="tape">
           <img class="tape tape14" src="../svger/tape.svg" alt="tape">
@@ -118,7 +120,7 @@ import WhiteBox from "../components/WhiteBox.astro";
         </div>
         <div class="citat-box citat-box1">
             <p>“SUBURBANGIRLS har givet mig en tro på min plads i musik-branchen og mine musikalske færdigheder. Den tro har jeg haft brug for, for ikke at brænde ud før jeg overhovedet havde fået fod indenfor”</p>
-        </div>
+       </div>
 
         <div class="polaroid-box polaroid-box2">
             <img class="tape tape15" src="../svger/tape.svg" alt="tape">
@@ -178,16 +180,17 @@ import WhiteBox from "../components/WhiteBox.astro";
     margin-top: -1rem;
   }
   
-  .pink-container h2 {
+  .pink-container h1 {
     color: white;
+    font-size: 2rem;
     text-align: center;
     margin-top: 1rem;
   }
+
   .grid-container2{
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 3.5rem;
-    width: fit-content;
     margin: 0 auto;
   }
   
@@ -361,20 +364,23 @@ import WhiteBox from "../components/WhiteBox.astro";
     margin-left: 10rem;
     margin-right: 10rem;
    }
-
-   h1{
-    margin-top: 3rem;
-    margin-bottom:1rem;
-   }
    
   .grid-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 0rem;
   width:100%;
   height:100%;
+  margin-bottom: 5rem;
  }
- 
+  .span-container{
+    grid-column: 2;
+    grid-row: span 2;
+  }
+
+  .grid-container p{
+    margin-left: 10rem;
+  }
 
  
   /*----------- FORLØBETS INDHOLD -----------*/
@@ -476,26 +482,32 @@ import WhiteBox from "../components/WhiteBox.astro";
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
+
    .polaroid-box1{
-   
+    justify-self: end;
   }
+
   .polaroid-box2{
     grid-column-start:2;
     justify-content: start;
   }
+
    .polaroid-box3{
-    
+    justify-self: end;
   }
+
   .citat-box2{
     grid-column-start: 1;
     grid-row-start: 2;
     justify-self: end;
   }
+
   .polaroid-box h2{
     margin-top: 1rem;
     white-space: nowrap;
     font-size: 3rem;
   }
+
   .polaroid-box img.mariya-img, img.mathilde-img, img.thannura-img {
   width: 100%;
   height: auto;
@@ -505,10 +517,12 @@ import WhiteBox from "../components/WhiteBox.astro";
     top: -2.5rem;
     left: -2rem;
   }
+
   .tape14, .tape16, .tape18 {
     top: -2.5rem;
     right: -2rem;
   }
+
   .citat-box {
     padding: 5rem;
     width: 80%;

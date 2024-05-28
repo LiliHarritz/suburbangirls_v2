@@ -31,15 +31,21 @@ body {
   src: url(../fonts/mostwasted.woff2);
 }
 
+@font-face {
+  font-family: oswald;
+  src: url(../fonts/oswald.ttf);
+}
+
 h1 {
-  font-family: mostWasted, serif;
+  font-family: oswald;
   font-size: 2.5rem;
-  margin-bottom: 0.2rem;
-  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-family: Amiko-Bold;
+  font-family: oswald;
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -77,21 +83,16 @@ ul li {
 
 @media (min-width: 769px) {
   h1 {
-    font-family: mostWasted, serif;
-    font-size: 7rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0.4rem;
+    font-size: 6rem;
+    margin-bottom: 1rem 0rem;
   }
 
   h2 {
-    font-family: Amiko-Bold;
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 1em;
   }
 
   p {
-    font-family: Amiko-Regular;
     font-size: 2rem;
     line-height: 3rem;
     font-weight: normal;
