@@ -54,7 +54,8 @@ import PostIt from "../components/PostIt.astro";
         <img class="tape4" src="../svger/tape.svg" alt="tape">
             <h2 class="frontpage_tekst">INFO-EVENT ONLINE</h2>
             <h3>21. NOVEMBER KL. 19.00</h3>
-            <a href="/ansog"><Button>LINK</Button></a>
+            <a href="https://docs.google.com/forms/d/1aT5OMMFyhVFeyxX2CWQICQA-FcZ2hhjhwoQ7THOj-IM/viewform?edit_requested=true"><Button>LINK</Button>
+            </a>
         </div>
         
 
@@ -70,7 +71,7 @@ import PostIt from "../components/PostIt.astro";
 .forsidebillede_container{
     display: grid;
     width: 100%;
-    height: 43vh; /* Full viewport height mobile */
+    height: 59vh; /* Full viewport height mobile */
     overflow: hidden; /* Hide overflow */
 }
 
@@ -81,7 +82,7 @@ import PostIt from "../components/PostIt.astro";
     width: 100%;
     height: 100%;
     object-fit: cover; /* Scale and crop */
-    object-position: 17% center;
+    object-position: 27% center;
 }
 /* Overskrifter */
 
@@ -91,7 +92,7 @@ import PostIt from "../components/PostIt.astro";
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
-    margin-top: -1vw;
+    margin-top: 3vw;
 }
 .forside_overskrift{
     color: var(--pink);
@@ -100,7 +101,7 @@ import PostIt from "../components/PostIt.astro";
 .forside_overskrift_skygge{
     color: white;
     margin-left: 1vw;
-    margin-top: -1.2vw;
+    margin-top: 2.5vw;
 }
 
 /* Tekst overlay */
@@ -111,12 +112,15 @@ import PostIt from "../components/PostIt.astro";
     align-self: center;
     color: rgb(255, 255, 255);
     text-align: left;
-    margin-top: 20vw;
-    margin-left: 6vw;
+    margin-top: 31vw;
+    margin-left: 10vw;
     z-index: 5;
 }
 h2{
     margin-bottom: 0vw;
+}
+.forside_pb{
+  font-size: 0.8rem;
 }
 
 
@@ -126,12 +130,11 @@ h2{
 .logo_container{
 display: flex;
 justify-content: center;
-margin-top: 1vw;
-margin-bottom: 2vw;
+margin-bottom: 5px;
 }
 
 .logo{
-    scale: 0.9;
+    scale: 0.6;
 }
 
 /*BILLEDER*/
@@ -149,7 +152,7 @@ margin-bottom: 2vw;
     height: 40vw;
     object-fit: cover;
     margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: -1.5em;
   }
 
   .pink-img2 {
@@ -276,7 +279,7 @@ position: absolute;
   display: none;
 }
 /*DESKTOP VERSION*/
-@media (min-width: 769px){
+@media (min-width: 810px){ /*Ændret fra 768px til 810px*/
 
   .forside_p{
     margin-bottom: 3vw;
@@ -294,11 +297,21 @@ position: absolute;
       width: 100%;
 }
 
+
     /* FORSIDE BILLEDE LAYOUT*/
     .forsidebillede_container{
     height: 91vh; /* Full viewport height mobile */
 }
+/**FORSIDE TEKST */
 
+.forside_overskrift, .forside_overskrift_skygge {
+    font-size: 15vw;
+    font-family: mostWasted;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    margin-top: -1.5vw;
+}
 .tekst-overlay {
     justify-self: right;
     align-self: center;
@@ -307,12 +320,21 @@ position: absolute;
     margin-right: 8%;
     margin-top: 18em;
 }
+
 .frontpage_tekst{
   font-size: 3rem;
+}
+.forside_pb{
+  font-size: 1.6rem;
 }
 
 .tekst-overlay h2{
   color: var(--pink);
+}
+
+.logo{
+  scale: 0.9;
+  margin-top: 1rem;
 }
 
 .forsidebillede2 {
@@ -320,15 +342,7 @@ position: absolute;
     grid-column: 1;
     grid-row: 1;
 }
-.video {
-  grid-column: 1;
-    grid-row: 1;
-    margin-top: 28%;
-    margin-left: 7%;
-    border: 5px solid  var(--pink); /* Tilføjer en sort kant på 5px */
-    max-width: 800px;
-    height: 450px;
-}
+
 .desktop_grid{
   display: grid;
 }
@@ -379,6 +393,19 @@ position: absolute;
     margin-top: -11%;
   }
 }
+
+@media (min-width: 863px){ /*Flyttet ned til sin egen media query*/
+  .video {
+  grid-column: 1;
+    grid-row: 1;
+    margin-top: 28%;
+    margin-left: 7%;
+    border: 5px solid  var(--pink); /* Tilføjer en pink kant på 5px */
+    max-width: 800px;
+    height: 450px;
+}
+}
+
 @media (max-width: 1150px){
   .hvid_box {
     grid-column: 1;

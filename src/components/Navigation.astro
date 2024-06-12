@@ -10,6 +10,7 @@
       <li><a href="/modos">MØD OS</a></li>
       <li><a href="/deltager">DELTAGERNE</a></li>
       <li><a href="/ansog">ANSØG</a></li>
+      <li><a href="/somevideo">SOME</a></li>
     </ul>
     <div class="burger-menu">
       <div class="line1"></div>
@@ -38,7 +39,8 @@
     background-color: #fffffe;
     color: white;
     padding: 0.7em;
-    overflow: hidden;
+    /* overflow: hidden; */ /*FJERNET*/
+    position: sticky; /* Sætter navigationsbjælken fast øverst */
   }
 
   .logo img {
@@ -50,12 +52,9 @@
   .nav-links {
     list-style: none;
     display: flex;
+    cursor: pointer;
   }
-
-  .nav-links li {
-    margin-right: 50px;
-  }
-
+  
   .nav-links a {
     text-decoration: none;
     font-family: "Amiko-Regular", sans-serif;
@@ -64,67 +63,91 @@
   }
 
   .nav-links a:hover {
-    color: var(--pink); /* Change this to the color you want on hover */
+    color: var(--pink);
   }
 
   .burger-menu {
     display: none;
-    cursor: pointer;
+    /* cursor: pointer; */ /*Unødvendigt*/
   }
-
+    /* Stil for burger-menu */
   .burger-menu div {
     width: 25px;
     height: 3px;
-
     margin: 5px;
     transition: all 0.3s ease;
-  }
-  .line1 {
-    background-color: #f499b8;
-  }
-
-  .line2 {
     background-color: black;
   }
 
-  .line3 {
-    background-color: #3c441b;
-  }
-  /* Responsive */
-  @media (max-width: 768px) {
+    /* .line1, .line2, .line3 {
+    background-color: black; /*flyttet til burger-menu div*/
+
+  /* Responsive Desktop*/
+  @media (max-width: 810px) { /*Ændret fra 768px til 810px*/
     .nav-links {
       display: none;
       position: absolute;
       right: 0;
       height: 100vh;
       top: 60px;
-      background-color: #fffffe;
+      background-color: #ffffff;
       flex-direction: column;
-      width: 100%;
-      text-align: center;
+      width: 40%; /*Mindre width*/
+      /* text-align: center; */
       z-index: 10;
     }
 
     .nav-links li {
-      margin: 27px 0;
+      margin-top: 25px;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
-
     .burger-menu {
       display: block;
     }
+
+    /*Justering af logo*/
+    .logo img {
+      height: 45px;
+      width: auto;
+      margin-left: 5px;
+    }
+
+    /*Krydset til burgermenu*/
+    .burger-menu .line1.toggle {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger-menu .line2.toggle {
+      opacity: 0;
+    }
+
+    .burger-menu .line3.toggle {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
   }
 
+  @media (min-width: 810px) {
+    .nav-links a{
+      margin-right: 50px;
+    }
+  }
+
+  /*Til JAVA*/
   .nav-active {
     display: flex;
   }
 </style>
 
 <script>
-  const burgerMenu = document.querySelector(".burger-menu");
-  const navLinks = document.querySelector(".nav-links");
+  const burgerMenu = document.querySelector(".burger-menu"); /*De 3 streger*/
+  const navLinks = document.querySelector(".nav-links"); /*Navigationen*/
 
   burgerMenu.addEventListener("click", () => {
     navLinks.classList.toggle("nav-active");
     burgerMenu.classList.toggle("toggle");
+    document.querySelectorAll(".burger-menu div").forEach(kryds => { /*De 3 streger = hver af dem forEach*/
+      kryds.classList.toggle("toggle");
+    });
   });
 </script>
